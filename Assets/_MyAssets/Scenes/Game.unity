@@ -218,6 +218,7 @@ GameObject:
   - component: {fileID: 1383815801}
   - component: {fileID: 1383815800}
   - component: {fileID: 1383815802}
+  - component: {fileID: 1383815803}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -306,6 +307,73 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _vitesse: 10
+--- !u!60 &1383815803
+PolygonCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1383815799}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 5.12, y: 2.56}
+    newSize: {x: 5.12, y: 2.56}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  m_Points:
+    m_Paths:
+    - - {x: 0.48999998, y: -0.87}
+      - {x: 0.71, y: -1.03}
+      - {x: 0.74, y: -1.04}
+      - {x: 0.94, y: -1}
+      - {x: 0.89, y: -0.90999997}
+      - {x: 1.66, y: -0.89}
+      - {x: 1.78, y: -0.75}
+      - {x: 1.79, y: -0.7}
+      - {x: 1.65, y: -0.55}
+      - {x: 0.88, y: -0.57}
+      - {x: 0.89, y: -0.51}
+      - {x: 0.87, y: -0.47}
+      - {x: 0.75, y: -0.5}
+      - {x: 0.74, y: -0.19}
+      - {x: 0.63, y: 0.03}
+      - {x: 0.55, y: 0.13}
+      - {x: 0.39, y: 0.14}
+      - {x: 0.26, y: 0.16}
+      - {x: 0.12, y: 0.16}
+      - {x: 0.11, y: 0.14}
+      - {x: 0.11, y: 0.099999994}
+      - {x: -0.081950836, y: 0.08509582}
+      - {x: -0.14999999, y: 0}
+      - {x: -0.29999998, y: -0.06}
+      - {x: -0.22, y: -0.22999999}
+      - {x: -0.34, y: -0.39999998}
+      - {x: -0.34, y: -0.48999998}
+      - {x: -0.17, y: -0.63}
+      - {x: -0.29, y: -0.74}
+      - {x: -0.21, y: -0.94}
+      - {x: -0.21, y: -1.03}
+      - {x: -0.089999996, y: -1.17}
+      - {x: -0.04, y: -1.17}
+      - {x: 0.16, y: -1.03}
+      - {x: 0.35, y: -1.23}
+      - {x: 0.39, y: -1.23}
+      - {x: 0.52, y: -1.1}
+      - {x: 0.51, y: -1.04}
+      - {x: 0.38, y: -0.94}
+    - - {x: 0.58, y: -0.61}
+      - {x: 0.62, y: -0.65}
+      - {x: 0.59999996, y: -0.65}
 --- !u!1 &1407722555
 GameObject:
   m_ObjectHideFlags: 0
@@ -433,6 +501,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1706624483}
   - component: {fileID: 1706624482}
+  - component: {fileID: 1706624484}
   m_Layer: 0
   m_Name: Shield
   m_TagString: Untagged
@@ -507,6 +576,26 @@ Transform:
   m_Father: {fileID: 1383815801}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &1706624484
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1706624481}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &1952394708
 GameObject:
   m_ObjectHideFlags: 0
