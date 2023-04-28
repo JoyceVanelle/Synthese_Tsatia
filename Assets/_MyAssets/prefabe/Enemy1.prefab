@@ -99,6 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4398f3164acc7b247ab0b8bc0f6ef213, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _vitesse: 6
+  _points: 100
+  _explosionPrefab: {fileID: 4306764366474292800, guid: 26e6d789559142048947f7c4d5f44c3e,
+    type: 3}
 --- !u!50 &3128805398641185585
 Rigidbody2D:
   serializedVersion: 4
@@ -130,7 +134,7 @@ PolygonCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
