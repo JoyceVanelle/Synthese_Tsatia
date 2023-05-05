@@ -17,6 +17,7 @@ TagManager:
   - Laser
   - Enemy2
   - Enemy1
+  - Ball
   layers:
   - Default
   - TransparentFX
@@ -77,4 +78,7 @@ TagManager:
     locked: 0
   - name: Foreground
     uniqueID: 2509184343
+    locked: 0
+  - name: Foreground
+    uniqueID: 415351143
     locked: 0
