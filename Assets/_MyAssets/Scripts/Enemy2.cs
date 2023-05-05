@@ -42,4 +42,16 @@ public class Enemy2 : MonoBehaviour
     //        transform.position = new Vector3(-9.5f, transform.position.y, 0f);
     //    }
     //}
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+       if (collision.tag == "Player")
+        {
+            Destroy(gameObject); // elle detruit l'enemie
+            //Player player = collision.transform.GetComponent<Player>();
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            //player.Dommage();
+
+        }
+    }
 }

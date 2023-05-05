@@ -11,6 +11,10 @@ public class Jouer : MonoBehaviour
     [SerializeField] private GameObject _laserPrefab = default;
     [SerializeField]private GameObject _KnivePrefab= default;
     [SerializeField] private GameObject _explosionPrefab = default;
+    [SerializeField] private int _playerLifes = 3;
+    private SpawnManager _spawnManager;
+
+    HealthBar BarreDevie = new HealthBar();
   
 
     private float _canFire = -1f;
@@ -22,9 +26,14 @@ public class Jouer : MonoBehaviour
 
     private void Start()
     {
+        
         transform.position = new Vector3(0f , -2.89f , 0f);
         _cadenceInitiale = _cadenceTir;
         _canCutInitiale = _cadenceCut;
+        _spawnManager = GameObject.Find("SpawnManger").GetComponent<SpawnManager>();
+        BarreDevie.max = 100;
+        BarreDevie.valeur= 100;
+
     }
     // Update is called once per frame
     void Update()
@@ -32,6 +41,15 @@ public class Jouer : MonoBehaviour
         MouvementsJoueur();
         Tir();
         Cut();
+
+        if (Input.GetKeyDown(KeyCode.KeypadMinus))
+        {
+            BarreDevie.valeur -= 1;
+        }
+        else if (Input.GetKeyDown(KeyCode.KeypadPlus))
+        {
+            BarreDevie.valeur += 10;
+        }
     }
 
     private void MouvementsJoueur()
@@ -41,7 +59,7 @@ public class Jouer : MonoBehaviour
         Vector3 direction = new Vector3(horizInput, vertiInput, 0f);
         transform.Translate(direction * Time.deltaTime * _vitesse);
         // ajuster la position en y (vertical) en utilisant le math.clamp
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -6.0f, 4.0f), Mathf.Clamp(transform.position.y, -4f, 3.5f), 0f);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8.0f, 4.0f), Mathf.Clamp(transform.position.y, -4f, 3.5f), 0f);
        
     }
 
@@ -80,7 +98,24 @@ public class Jouer : MonoBehaviour
         yield return new WaitForSeconds(5);
         _cadenceCut = _canCutInitiale;
     }
- }
+
+
+    //private void OnTriggerEnter2D(Collider2D collision)
+    //{
+    //    if (collision.tag == "Enemy1" || collision.tag == "Enemy2")
+    //    {
+    //        Debug.Log("hello");
+    //        Destroy(collision.gameObject); // elle detruit lenemie
+    //        _uiManager.AjouterScore(_points);
+    //        Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+    //        Destroy(gameObject); // elle detruit l'enemie
+    //        BarreDevie.valeur -= 10;
+
+    //    }
+
+    //}
+
+}
 
 
 
