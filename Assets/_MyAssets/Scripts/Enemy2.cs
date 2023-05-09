@@ -7,10 +7,11 @@ public class Enemy2 : MonoBehaviour
     [SerializeField] private float _vitesse = 10.0f;
     [SerializeField] private int _points = 100;
     [SerializeField] private GameObject _explosionPrefab = default;
+    private UIManager _uiManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _uiManager.AjouterScore(_points);
     }
 
     // Update is called once per frame
@@ -48,9 +49,10 @@ public class Enemy2 : MonoBehaviour
        if (collision.tag == "Player")
         {
             Destroy(gameObject); // elle detruit l'enemie
-            //Player player = collision.transform.GetComponent<Player>();
+            _uiManager.AjouterScore(_points);
+            Jouer player = collision.transform.GetComponent<Jouer>();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-            //player.Dommage();
+            player.Damage();
 
         }
     }

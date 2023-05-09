@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Enemie : MonoBehaviour
@@ -7,11 +8,11 @@ public class Enemie : MonoBehaviour
     [SerializeField] private float _vitesse = 6f;
     [SerializeField] private int _points = 100;
     [SerializeField] private GameObject _explosionPrefab = default;
-   // private UIManager _uiManager;
+        private UIManager _uiManager;
     // Start is called before the first frame update
     void Start()
     {
-        //_uiManager = FindObjectOfType<UIManager>();
+        _uiManager = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
@@ -30,7 +31,7 @@ public class Enemie : MonoBehaviour
         if (collision.tag == "Laser")
         {
             Destroy(collision.gameObject); // elle detruit le lasar
-            //_uiManager.AjouterScore(_points);
+            _uiManager.AjouterScore(_points);
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject); // elle detruit l'enemie
 
@@ -38,9 +39,9 @@ public class Enemie : MonoBehaviour
         else if (collision.tag == "Player")
         {
             Destroy(gameObject); // elle detruit l'enemie
-            //Player player = collision.transform.GetComponent<Player>();
+            Jouer player = collision.transform.GetComponent<Jouer>();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-            //player.Dommage();
+            player.Damage(); // elle detruit le joue
 
         }
     }

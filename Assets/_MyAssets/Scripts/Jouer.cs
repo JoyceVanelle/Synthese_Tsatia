@@ -23,6 +23,7 @@ public class Jouer : MonoBehaviour
     private float _cadenceInitiale;
     private float _canCutInitiale;
     private float _life;
+    private object _lifeBar;
 
     // Start is called before the first frame update
 
@@ -32,7 +33,7 @@ public class Jouer : MonoBehaviour
         transform.position = new Vector3(-7f, -4f, 0f);
         _cadenceInitiale = _cadenceTir;
         _canCutInitiale = _cadenceCut;
-        _spawnManager = GameObject.Find("SpawnManger").GetComponent<SpawnManager>();
+        _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
         //BarreDevie.max = 90;
         //BarreDevie.valeur= 90;
 
@@ -54,7 +55,7 @@ public class Jouer : MonoBehaviour
         Vector3 direction = new Vector3(horizInput, vertiInput, 0f);
         transform.Translate(direction * Time.deltaTime * _vitesse);
         // ajuster la position en y (vertical) en utilisant le math.clamp
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8.0f, 4.0f), Mathf.Clamp(transform.position.y, -2f, 1.5f), 0f);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8.0f, 10.0f), Mathf.Clamp(transform.position.y, -2f, 5f), 0f);
 
     }
 
@@ -126,8 +127,19 @@ public class Jouer : MonoBehaviour
             //spawnmanager.finjeu();
             // instantier explosion
             Destroy(gameObject);
+            _spawnManager.FinJeu();
+          
+        }
 
 
+
+    }
+    public void Heal()
+    {
+        if (_lifebar.Value < 1f)
+        {
+            _life = _life + 0.1f;
+            _lifebar.SetValue(_life);
         }
 
     }
