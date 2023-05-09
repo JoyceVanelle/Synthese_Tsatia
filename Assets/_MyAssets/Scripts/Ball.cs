@@ -23,9 +23,9 @@ public class Ball : MonoBehaviour
         if (collision.tag == "Player")
         {
             Destroy(gameObject); // elle detruit l'enemie
-            //Player player = collision.transform.GetComponent<Player>();
+            Jouer player = collision.transform.GetComponent<Jouer>();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-            //player.Dommage();
+            player.Damage();
 
         }
     }

@@ -23,7 +23,7 @@ public class Jouer : MonoBehaviour
     private float _cadenceInitiale;
     private float _canCutInitiale;
     private float _life;
-    private object _lifeBar;
+  
 
     // Start is called before the first frame update
 
@@ -34,9 +34,7 @@ public class Jouer : MonoBehaviour
         _cadenceInitiale = _cadenceTir;
         _canCutInitiale = _cadenceCut;
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        //BarreDevie.max = 90;
-        //BarreDevie.valeur= 90;
-
+        
     }
     // Update is called once per frame
     void Update()

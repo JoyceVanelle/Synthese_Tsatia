@@ -23,11 +23,11 @@ public class SpawnManager : MonoBehaviour
     {
         StartCoroutine(SpawnEnemyRouting());
         StartCoroutine(SpawnEnemy2Routing());
-        //StartCoroutine(SpawnEnemyRouting3());
+        StartCoroutine(SpawnEnemyRouting3());
         StartCoroutine(SpawnEnemyRouting4());
     }
 
-    // Update is called once per frame
+    // Update is called once per frameaaaaaa
    
 
     IEnumerator SpawnEnemyRouting()
@@ -57,13 +57,13 @@ public class SpawnManager : MonoBehaviour
     IEnumerator SpawnEnemyRouting3()
     {
         yield return new WaitForSeconds(3.0f);
-        while (_stopSpawn3 == false)
+        while (!_stopSpawn3)
         {
             // Vector3 posSpawn = new Vector3(Random.Range(-8.0f, 8.0f), 7f, 0f);
             Vector3 posiSpawn3 = new Vector3(7.0f, -3f, 0f);
             GameObject newEnemy3 = Instantiate(_prefabball, posiSpawn3, Quaternion.identity);
             newEnemy3.transform.parent = _enemyContainer3.transform;
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(6f);
         }
 
     }
@@ -85,7 +85,7 @@ public class SpawnManager : MonoBehaviour
     {
         _stopSpawn4 = true;
         _stopSpawn2 = true;
-        //_stopSpawn3 = true;
+        _stopSpawn3 = true;
         _stopSpawn = true;
     }
 }
