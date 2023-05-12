@@ -24,6 +24,7 @@ public class Jouer : MonoBehaviour
     private float _canCutInitiale;
     private float _life;
   
+    private Animator _anim;
 
     // Start is called before the first frame update
 
@@ -34,7 +35,8 @@ public class Jouer : MonoBehaviour
         _cadenceInitiale = _cadenceTir;
         _canCutInitiale = _cadenceCut;
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
-        
+        _anim = GetComponent<Animator>();
+
     }
     // Update is called once per frame
     void Update()
@@ -52,8 +54,29 @@ public class Jouer : MonoBehaviour
         float vertiInput = Input.GetAxis("Vertical");
         Vector3 direction = new Vector3(horizInput, vertiInput, 0f);
         transform.Translate(direction * Time.deltaTime * _vitesse);
+
+
+
+        // Gestion des Animations
+
+        if (horizInput < 0f)
+        {
+            _anim.SetBool("JumpAttack", true);
+            _anim.SetBool("Knightwalk", false);
+        }
+        else if (horizInput > 0f)
+        {
+            _anim.SetBool("JumpAttack", false);
+            _anim.SetBool("Knightwalk", true);
+        }
+        else
+        {
+            _anim.SetBool("JumpAttack", false);
+            _anim.SetBool("Knightwalk", false);
+        }
+
         // ajuster la position en y (vertical) en utilisant le math.clamp
-        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8.0f, 10.0f), Mathf.Clamp(transform.position.y, -2f, 5f), 0f);
+        transform.position = new Vector3(Mathf.Clamp(transform.position.x, -8.0f, 10.0f), Mathf.Clamp(transform.position.y, -3f, 5f), 0f);
 
     }
 
@@ -96,15 +119,11 @@ public class Jouer : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.tag == "Enemy1") /*|| collision.tag == "Enemy2" || collision.tag == "Ball")*/
+        if (collision.tag == "Enemy1" || collision.tag == "Enemy2") /*|| collision.tag == "Enemy2" || collision.tag == "Ball")*/
         {
             Debug.Log("hello");
             Destroy(collision.gameObject); // elle detruit lenemie
-                                           //_uiManager.AjouterScore(_points);
-                                           // Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-                                           //Destroy(gameObject); // elle detruit l'enemie
-                                           //BarreDevie.valeur -= 10;
-
+                                           
             Damage();
         }
 

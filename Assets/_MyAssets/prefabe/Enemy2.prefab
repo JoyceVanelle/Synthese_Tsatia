@@ -28,8 +28,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6142571125188893023}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.08, y: -4.01, z: 0}
-  m_LocalScale: {x: 0.21, y: 0.17, z: 1}
+  m_LocalPosition: {x: 2.9892, y: -4.8905, z: 0}
+  m_LocalScale: {x: 0.100926, y: 0.081957005, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4bfe0a122b18d9e408e0759a9d73fa92, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _vitesse: 6
+  _vitesse: 5
   _points: 100
   _explosionPrefab: {fileID: 4306764366474292800, guid: 26e6d789559142048947f7c4d5f44c3e,
     type: 3}

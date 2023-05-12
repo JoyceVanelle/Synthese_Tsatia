@@ -12,7 +12,7 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject _enemyContainer2 = default;
     [SerializeField] private GameObject _enemyContainer3 = default;
     [SerializeField] private GameObject _enemyContainer4 = default;
-    [SerializeField] private GameObject[] _listePUPrefabs = default;
+    //[SerializeField] private GameObject[] _listePUPrefabs = default;
     private bool _stopSpawn4 = false;
     private bool _stopSpawn2 = false;
     private bool _stopSpawn3 = false;
@@ -38,7 +38,7 @@ public class SpawnManager : MonoBehaviour
             Vector3 posSpawn = new Vector3(Random.Range(-8.0f, 8.0f), 7f, 0f);
             GameObject newEnemy = Instantiate(_prefabEnemy, posSpawn, Quaternion.identity);
             newEnemy.transform.parent = _enemyContainer.transform;
-            yield return new WaitForSeconds(2.0f);
+            yield return new WaitForSeconds(15f);
         }
 
     }
@@ -51,7 +51,7 @@ public class SpawnManager : MonoBehaviour
             Vector3 posiSpawn = new Vector3(7.0f, -3f, 0f);
             GameObject newEnemy2 = Instantiate(_prefabEnemy2, posiSpawn, Quaternion.identity);
             newEnemy2.transform.parent = _enemyContainer2.transform;
-            yield return new WaitForSeconds(3.0f);
+            yield return new WaitForSeconds(10f);
         }
     }
     IEnumerator SpawnEnemyRouting3()
@@ -63,7 +63,7 @@ public class SpawnManager : MonoBehaviour
             Vector3 posiSpawn3 = new Vector3(7.0f, -3f, 0f);
             GameObject newEnemy3 = Instantiate(_prefabball, posiSpawn3, Quaternion.identity);
             newEnemy3.transform.parent = _enemyContainer3.transform;
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(15f);
         }
 
     }

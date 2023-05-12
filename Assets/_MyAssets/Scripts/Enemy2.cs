@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Enemy2 : MonoBehaviour
 {
-    [SerializeField] private float _vitesse = 10.0f;
+    [SerializeField] private float _vitesse = 5.0f;
     [SerializeField] private int _points = 100;
     [SerializeField] private GameObject _explosionPrefab = default;
     private UIManager _uiManager;
@@ -49,11 +49,11 @@ public class Enemy2 : MonoBehaviour
        if (collision.tag == "Player")
         {
             Destroy(gameObject); // elle detruit l'enemie
-            _uiManager.AjouterScore(_points);
             Jouer player = collision.transform.GetComponent<Jouer>();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-            player.Damage();
+            player.Damage(); // elle detruit le joue 
 
         }
+       
     }
 }
