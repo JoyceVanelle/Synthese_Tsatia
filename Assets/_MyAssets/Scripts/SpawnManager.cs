@@ -8,27 +8,48 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private GameObject _prefabEnemy2 = default;
     [SerializeField] private GameObject _prefabball = default;
     [SerializeField] private GameObject _prefabPotion = default;
+    [SerializeField] private GameObject _prefabPioson = default;
+    [SerializeField] private GameObject _prefabStone = default;
     [SerializeField] private GameObject _enemyContainer = default;
     [SerializeField] private GameObject _enemyContainer2 = default;
     [SerializeField] private GameObject _enemyContainer3 = default;
     [SerializeField] private GameObject _enemyContainer4 = default;
+    [SerializeField] private GameObject _enemyContainer5 = default;
+    [SerializeField] private GameObject _enemyContainer6 = default;
+    private UIManager _uiManager;
     //[SerializeField] private GameObject[] _listePUPrefabs = default;
     private bool _stopSpawn4 = false;
     private bool _stopSpawn2 = false;
     private bool _stopSpawn3 = false;
     private bool _stopSpawn = false;
+    private bool _stopSpawn5 = false;
+    private bool _stopSpawn6 = false;
+
+
+    private bool _displayStone = true;
 
     // Start is called before the first frame update
     public void Start()
     {
+        _uiManager = FindObjectOfType<UIManager>();
         StartCoroutine(SpawnEnemyRouting());
         StartCoroutine(SpawnEnemy2Routing());
         StartCoroutine(SpawnEnemyRouting3());
         StartCoroutine(SpawnEnemyRouting4());
+        StartCoroutine(SpawnEnemyRouting6());
+
+    }
+    public void Update()
+    {
+        if(_uiManager.GetScore() > 800 && _displayStone)
+        {
+            StartCoroutine(SpawnStoneRouting());
+            _displayStone= false;
+        }
     }
 
     // Update is called once per frameaaaaaa
-   
+
 
     IEnumerator SpawnEnemyRouting()
     {
@@ -80,9 +101,35 @@ public class SpawnManager : MonoBehaviour
         }
 
     }
+    IEnumerator SpawnStoneRouting()
+    {
+        yield return new WaitForSeconds(3f);
+        while (!_stopSpawn5)
+        {
+            Vector3 posSpawn5 = new Vector3(Random.Range(-8.0f, 8.0f), 7f, 0f);
+            GameObject newEnemy5 = Instantiate(_prefabStone, posSpawn5, Quaternion.identity);
+            newEnemy5.transform.parent = _enemyContainer5.transform;
+            yield return new WaitForSeconds(5f);
+        }
+
+    }
+    IEnumerator SpawnEnemyRouting6()
+    {
+        yield return new WaitForSeconds(4f);
+        while (!_stopSpawn6)
+        {
+            Vector3 posSpawn6 = new Vector3(Random.Range(-8.0f, 8.0f), 7f, 0f);
+            GameObject newEnemy6 = Instantiate(_prefabPioson, posSpawn6, Quaternion.identity);
+            newEnemy6.transform.parent = _enemyContainer6.transform;
+            yield return new WaitForSeconds(6f);
+        }
+
+    }
 
     public void FinJeu()
     {
+        _stopSpawn5 = true;
+        _stopSpawn6 = true;
         _stopSpawn4 = true;
         _stopSpawn2 = true;
         _stopSpawn3 = true;

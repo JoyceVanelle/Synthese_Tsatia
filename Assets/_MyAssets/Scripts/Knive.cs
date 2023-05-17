@@ -12,7 +12,7 @@ public class Knive : MonoBehaviour
     void Update()
     {
 
-        transform.Translate(Vector3.up * Time.deltaTime * _vitesse);
+        transform.Translate(Vector3.right * Time.deltaTime * _vitesse);
         if (transform.position.y > 9f)
         {
             if (this.transform.parent == null)

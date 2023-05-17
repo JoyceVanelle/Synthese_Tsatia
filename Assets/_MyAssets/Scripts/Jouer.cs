@@ -10,8 +10,8 @@ public class Jouer : MonoBehaviour
     [SerializeField] private float _cadenceCut = 0.5f;
     [SerializeField] private GameObject _laserPrefab = default;
     [SerializeField] private GameObject _KnivePrefab = default;
-    [SerializeField] private GameObject _explosionPrefab = default;
-    //[SerializeField] private int _playerLifes = 3;
+   [SerializeField] private GameObject _explosionPrefab = default;
+    
     [SerializeField] ProgressBarPro _lifebar;
     private SpawnManager _spawnManager;
 
@@ -97,7 +97,7 @@ public class Jouer : MonoBehaviour
         if (Input.GetKey(KeyCode.V) && Time.time > _canCut)
         {
             _canCut = Time.time + _cadenceCut;
-            Instantiate(_KnivePrefab, transform.position + new Vector3(0f, 0.5f, 0f), Quaternion.identity);
+            Instantiate(_KnivePrefab, transform.position + new Vector3(0f, 0.2f, 0f), Quaternion.identity);
 
         }
     }
@@ -139,10 +139,7 @@ public class Jouer : MonoBehaviour
 
         if (_lifebar.Value == 0f)
         {
-            //spawnmanager spawnmanager = gameobject.find("spawnmanager").getcomponent<spawnmanager>();
-            // ou = findobjectoftype<spawnmanager>();
-            //spawnmanager.finjeu();
-            // instantier explosion
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
             _spawnManager.FinJeu();
           
@@ -156,6 +153,15 @@ public class Jouer : MonoBehaviour
         if (_lifebar.Value < 1f)
         {
             _life = _life + 0.1f;
+            _lifebar.SetValue(_life);
+        }
+
+    }
+    public void poison()
+    {
+        if (_lifebar.Value < 1f)
+        {
+            _life = _life - 0.1f;
             _lifebar.SetValue(_life);
         }
 

@@ -11,7 +11,7 @@ public class Enemy2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _uiManager.AjouterScore(_points);
+        _uiManager = FindObjectOfType<UIManager>();
     }
 
     // Update is called once per frame
@@ -46,7 +46,18 @@ public class Enemy2 : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-       if (collision.tag == "Player")
+
+        if (collision.tag == "Knive")
+        {
+            Debug.Log("hello");
+            Destroy(collision.gameObject); // elle detruit le couteau
+            _uiManager.AjouterScore(_points);
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject); // elle detruit l'enemie
+
+        }
+       
+        else if (collision.tag == "Player" )
         {
             Destroy(gameObject); // elle detruit l'enemie
             Jouer player = collision.transform.GetComponent<Jouer>();

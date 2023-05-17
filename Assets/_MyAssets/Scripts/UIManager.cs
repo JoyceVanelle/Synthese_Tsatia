@@ -9,12 +9,14 @@ public class UIManager : MonoBehaviour  {
     
     [SerializeField] private int _score =  default;
     [SerializeField] private TextMeshProUGUI _txtScore = default;
+    [SerializeField] private TextMeshProUGUI _txtTime = default;
     [SerializeField] private TextMeshProUGUI _txtGameOver = default;
     [SerializeField] private TextMeshProUGUI _txtRestart = default;
     [SerializeField] private TextMeshProUGUI _txtQuit = default;
     [SerializeField] private Image _livesDisplayImage = default;
     [SerializeField] private Sprite[] _liveSprites = default;
     [SerializeField] private GameObject _pausePanel = default;
+    private float _time;
     private bool _pauseOn = false;
     
     // Start is called before the first frame update
@@ -44,7 +46,19 @@ public class UIManager : MonoBehaviour  {
             Time.timeScale = 1;
             _pauseOn = false;
         }
+
+        _time = Time.time;
+        _txtTime.text = _time.ToString("f2");
     }
+    public float GetTime()
+    {
+        return _time;
+    }
+    public float GetScore()
+    {
+        return _score;
+    }
+
     public void AjouterScore(int points) {
         _score += points;
         UpdateScore();
