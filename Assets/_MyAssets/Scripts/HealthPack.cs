@@ -5,10 +5,10 @@ using UnityEngine;
 public class HealthPack : MonoBehaviour
 {
     [SerializeField] private float _speed = 3.0f;
-    Player _playerPrefab;
+    Jouer _playerPrefab;
     void Start()
     {
-        _playerPrefab = FindObjectOfType<Player>();
+        _playerPrefab = FindObjectOfType<Jouer>();
     }
 
 
