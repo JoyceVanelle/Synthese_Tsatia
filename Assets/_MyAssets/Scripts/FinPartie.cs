@@ -18,7 +18,7 @@ public class FinPartie : MonoBehaviour
 
 
         _txtPointage.text = "pointage :" + PlayerPrefs.GetInt("pointage", 0);
-        //_txtPointage.text = "pointage :" + _uiManager.GetScore();
+       
        
         if (PlayerPrefs.HasKey("meilleur"))
         {
@@ -33,7 +33,7 @@ public class FinPartie : MonoBehaviour
         }
         PlayerPrefs.Save();
         _txtMeilleur.text = "meilleiur pointage " + PlayerPrefs.GetInt("meilleur");
-        _txtTemps.text = "temps :" + _uiManager.GetTime();
+        _txtTemps.text = "temps :" + PlayerPrefs.GetFloat("temps");
     }
    
 }

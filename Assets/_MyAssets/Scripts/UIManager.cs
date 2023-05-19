@@ -112,4 +112,11 @@ public class UIManager : MonoBehaviour  {
         int noScene = SceneManager.GetActiveScene().buildIndex; // Récupère l'index de la scène en cours
         SceneManager.LoadScene(noScene + 1);
     }
+
+    public void SauvegardePointage()
+    {
+        PlayerPrefs.SetFloat("temps", _time);
+        PlayerPrefs.SetInt("pointage", _score);
+        PlayerPrefs.Save();
+    }
 }

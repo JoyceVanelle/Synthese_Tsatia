@@ -15,7 +15,7 @@ public class Jouer : MonoBehaviour
     [SerializeField] ProgressBarPro _lifebar;
     private SpawnManager _spawnManager;
     private GestionScene _gestionScene;
-
+    
     //HealthBar BarreDevie = new HealthBar();
 
 
@@ -23,7 +23,7 @@ public class Jouer : MonoBehaviour
     private float _canCut = -1f;
     private float _cadenceInitiale;
     private float _canCutInitiale;
-    private float _life;
+    [SerializeField] private float _life= 1f;
   
     private Animator _anim;
 
@@ -138,18 +138,23 @@ public class Jouer : MonoBehaviour
         Debug.Log(_life);
 
         _lifebar.SetValue(_life);
+        Mort();
 
+    }
+
+    private void Mort()
+    {
         if (_lifebar.Value <= 0f)
         {
             Destroy(gameObject);
-            _spawnManager.FinJeu();        
+            _spawnManager.FinJeu();
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             _gestionScene.ChangerSceneSuivante();
+            UIManager ui = FindObjectOfType<UIManager>();
+            ui.SauvegardePointage();
         }
-
-
-
     }
+
     public void Heal()
     {
         if (_lifebar.Value < 1f)
@@ -166,7 +171,9 @@ public class Jouer : MonoBehaviour
             _life = _life - 0.1f;
             _lifebar.SetValue(_life);
         }
-       
+
+        Mort();
+
 
     }
 }

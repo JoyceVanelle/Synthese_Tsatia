@@ -575,12 +575,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185757356}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14.64, y: -6.37, z: -0.62531054}
-  m_LocalScale: {x: 0.161877, y: 0.08749411, z: 0.64645}
+  m_LocalPosition: {x: 7.608606, y: -3.1166136, z: 0}
+  m_LocalScale: {x: 0.13322352, y: 0.07961846, z: 0.64645}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1407722556}
-  m_RootOrder: 0
+  m_Father: {fileID: 1630969327}
+  m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1361413601
 GameObject:
@@ -723,6 +723,7 @@ MonoBehaviour:
   _explosionPrefab: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
     type: 3}
   _lifebar: {fileID: 2044649448}
+  _life: 1
 --- !u!60 &1383815803
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -838,8 +839,7 @@ Transform:
   m_LocalPosition: {x: -4.44, y: 2.68, z: 0.62531054}
   m_LocalScale: {x: 0.8229922, y: 0.9099865, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1185757358}
+  m_Children: []
   m_Father: {fileID: 1630969327}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -936,6 +936,7 @@ Transform:
   - {fileID: 2007006351262822358}
   - {fileID: 736917896}
   - {fileID: 1669007147}
+  - {fileID: 1185757358}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
