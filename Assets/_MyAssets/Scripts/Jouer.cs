@@ -14,6 +14,7 @@ public class Jouer : MonoBehaviour
     
     [SerializeField] ProgressBarPro _lifebar;
     private SpawnManager _spawnManager;
+    private GestionScene _gestionScene;
 
     //HealthBar BarreDevie = new HealthBar();
 
@@ -35,6 +36,7 @@ public class Jouer : MonoBehaviour
         _cadenceInitiale = _cadenceTir;
         _canCutInitiale = _cadenceCut;
         _spawnManager = GameObject.Find("SpawnManager").GetComponent<SpawnManager>();
+        _gestionScene = GameObject.Find("GestionScene").GetComponent<GestionScene>();
         _anim = GetComponent<Animator>();
 
     }
@@ -140,9 +142,9 @@ public class Jouer : MonoBehaviour
         if (_lifebar.Value == 0f)
         {
             Destroy(gameObject);
-            _spawnManager.FinJeu();
+            _spawnManager.FinJeu();        
             Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
-
+            _gestionScene.ChangerSceneSuivante();
         }
 
 

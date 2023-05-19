@@ -7,10 +7,17 @@ public class FinPartie : MonoBehaviour
 {
     [SerializeField] private TMP_Text _txtPointage = default;
     [SerializeField] private TMP_Text _txtMeilleur = default;
+
+    public UIManager _uiManager;
+
     // Start is called before the first frame update
     void Start()
     {
-        _txtPointage.text = "pointage :" + PlayerPrefs.GetInt("pointage", 0);
+        _uiManager = FindObjectOfType<UIManager>();
+
+
+       // _txtPointage.text = "pointage :" + PlayerPrefs.GetInt("pointage", 0);
+        _txtPointage.text = "pointage :" + _uiManager.GetScore();
         if (PlayerPrefs.HasKey("meilleur"))
         {
             if (PlayerPrefs.GetInt("pointage") > PlayerPrefs.GetInt("meilleur"))
