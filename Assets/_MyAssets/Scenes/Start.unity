@@ -801,7 +801,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 528010392}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -809,12 +809,12 @@ RectTransform:
   - {fileID: 572433513}
   - {fileID: 1123196965}
   m_Father: {fileID: 1735014280}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 262, y: -158}
+  m_SizeDelta: {x: 1115.8789, y: 677.5231}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528010394
 MonoBehaviour:
@@ -873,7 +873,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.11764707, g: 0.6039216, b: 0.70980394, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -956,10 +956,15 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: hello
+  m_text: "Instructions\n--Les mouvements sont avec w-a-s-d ou les fl\xE8ches directinonnelles.\n--
+    vous pouvez tuer les ennemis avec la bar d'espace pour le laser et la lettre
+    v pour lancer des couteaux\n-- Attention vous ne devez pas touchez la potion
+    bleu parce que elle contient du poison qui dimuniras votre vie.\n-- Par contre
+    , vous devez prendre ou toucher la potion rose,car elle augmente votre vie."
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c867a9e6b1e65e6479235989f8047a80, type: 2}
+  m_sharedMaterial: {fileID: 887986302473062201, guid: c867a9e6b1e65e6479235989f8047a80,
+    type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -983,8 +988,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 40
+  m_fontSizeBase: 40
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1022,7 +1027,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &572433515
@@ -1100,7 +1105,7 @@ RectTransform:
   m_Children:
   - {fileID: 1739212853}
   m_Father: {fileID: 1735014280}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1245,7 +1250,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 57f12d84ebf04324e92e37dc70ac26b1, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.376
+  m_Volume: 0.584
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1414,8 +1419,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 36
-  m_fontSizeBase: 36
+  m_fontSize: 20.3
+  m_fontSizeBase: 20.3
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1501,8 +1506,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 160, y: 30}
+  m_AnchoredPosition: {x: 34, y: -304}
+  m_SizeDelta: {x: 215.4321, y: 49.4762}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123196966
 MonoBehaviour:
@@ -1836,8 +1841,8 @@ RectTransform:
   - {fileID: 370716652}
   - {fileID: 1791568343}
   - {fileID: 1223350995}
-  - {fileID: 878674615}
   - {fileID: 528010393}
+  - {fileID: 878674615}
   m_Father: {fileID: 152192481}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

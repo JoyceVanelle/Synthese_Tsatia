@@ -414,7 +414,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: b6dc04f2884eb5b46b675390b1e75e84, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.528
+  m_Volume: 0.611
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1583,6 +1583,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357662611968640634, guid: f10625c375125774898ebf8deae2a0e5,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 176.6258
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357662611968640634, guid: f10625c375125774898ebf8deae2a0e5,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -45.079018
+      objectReference: {fileID: 0}
+    - target: {fileID: 1357662611968640644, guid: f10625c375125774898ebf8deae2a0e5,
+        type: 3}
+      propertyPath: m_text
+      value: Temps 00:00
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f10625c375125774898ebf8deae2a0e5, type: 3}
