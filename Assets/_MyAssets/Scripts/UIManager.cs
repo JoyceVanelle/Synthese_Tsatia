@@ -79,10 +79,13 @@ public class UIManager : MonoBehaviour  {
     }
 
     private void GameOverSequence() {
-        _txtGameOver.gameObject.SetActive(true);
-        _txtRestart.gameObject.SetActive(true);
-        _txtQuit.gameObject.SetActive(true);
-        StartCoroutine(GameOverBlinkRoutine());
+        //_txtGameOver.gameObject.SetActive(true);
+        //_txtRestart.gameObject.SetActive(true);
+        //_txtQuit.gameObject.SetActive(true);
+        //StartCoroutine(GameOverBlinkRoutine());
+        PlayerPrefs.SetInt("pointage", _score);
+        PlayerPrefs.Save();
+        SceneManager.LoadScene(2);
     }
 
     IEnumerator GameOverBlinkRoutine() {
@@ -98,5 +101,15 @@ public class UIManager : MonoBehaviour  {
         _pausePanel.SetActive(false);
         Time.timeScale = 1;
         _pauseOn = false;
+    }
+
+    public void ChargerSceneDepart()
+    {
+        SceneManager.LoadScene(0);
+    }
+    public void ChangerSceneSuivante()
+    {
+        int noScene = SceneManager.GetActiveScene().buildIndex; // Récupère l'index de la scène en cours
+        SceneManager.LoadScene(noScene + 1);
     }
 }

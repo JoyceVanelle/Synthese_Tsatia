@@ -101,7 +101,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _vitesse: 6
   _points: 100
-  _explosionPrefab: {fileID: 4306764366474292800, guid: 26e6d789559142048947f7c4d5f44c3e,
+  _explosionPrefab: {fileID: 1892078723244562, guid: 46876a2780737ec45a19d62f88e5ce56,
     type: 3}
 --- !u!50 &3128805398641185585
 Rigidbody2D:

@@ -103,25 +103,25 @@ public class SpawnManager : MonoBehaviour
     }
     IEnumerator SpawnStoneRouting()
     {
-        yield return new WaitForSeconds(3f);
+        yield return new WaitForSeconds(2f);
         while (!_stopSpawn5)
         {
             Vector3 posSpawn5 = new Vector3(Random.Range(-8.0f, 8.0f), 7f, 0f);
             GameObject newEnemy5 = Instantiate(_prefabStone, posSpawn5, Quaternion.identity);
             newEnemy5.transform.parent = _enemyContainer5.transform;
-            yield return new WaitForSeconds(5f);
+            yield return new WaitForSeconds(7f);
         }
 
     }
     IEnumerator SpawnEnemyRouting6()
     {
-        yield return new WaitForSeconds(4f);
+        yield return new WaitForSeconds(3f);
         while (!_stopSpawn6)
         {
             Vector3 posSpawn6 = new Vector3(Random.Range(-8.0f, 8.0f), 7f, 0f);
             GameObject newEnemy6 = Instantiate(_prefabPioson, posSpawn6, Quaternion.identity);
             newEnemy6.transform.parent = _enemyContainer6.transform;
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(5f);
         }
 
     }

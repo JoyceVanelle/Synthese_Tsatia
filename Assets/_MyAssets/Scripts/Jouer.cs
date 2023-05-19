@@ -139,10 +139,10 @@ public class Jouer : MonoBehaviour
 
         if (_lifebar.Value == 0f)
         {
-            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
             Destroy(gameObject);
             _spawnManager.FinJeu();
-          
+            Instantiate(_explosionPrefab, transform.position, Quaternion.identity);
+
         }
 
 
@@ -164,6 +164,7 @@ public class Jouer : MonoBehaviour
             _life = _life - 0.1f;
             _lifebar.SetValue(_life);
         }
+       
 
     }
 }
