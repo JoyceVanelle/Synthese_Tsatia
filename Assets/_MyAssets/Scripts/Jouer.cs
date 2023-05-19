@@ -139,7 +139,7 @@ public class Jouer : MonoBehaviour
 
         _lifebar.SetValue(_life);
 
-        if (_lifebar.Value == 0f)
+        if (_lifebar.Value <= 0f)
         {
             Destroy(gameObject);
             _spawnManager.FinJeu();        

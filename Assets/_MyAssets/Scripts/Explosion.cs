@@ -14,7 +14,7 @@ public class Explosion : MonoBehaviour
 
     private void Update()
     {
-        AudioSource.PlayClipAtPoint(_sonExplosion, Camera.main.transform.position, 0.1f);
+        AudioSource.PlayClipAtPoint(_sonExplosion, Camera.main.transform.position, 0.02f);
         transform.Translate(Vector3.down * Time.deltaTime * 2f);
     }
 }
