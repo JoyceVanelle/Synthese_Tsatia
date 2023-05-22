@@ -813,8 +813,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 262, y: -158}
-  m_SizeDelta: {x: 1115.8789, y: 677.5231}
+  m_AnchoredPosition: {x: 285.71228, y: -140.75952}
+  m_SizeDelta: {x: 1163.3035, y: 820.881}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &528010394
 MonoBehaviour:
@@ -959,8 +959,9 @@ MonoBehaviour:
   m_text: "Instructions\n--Les mouvements sont avec w-a-s-d ou les fl\xE8ches directinonnelles.\n--
     vous pouvez tuer les ennemis avec la bar d'espace pour le laser et la lettre
     v pour lancer des couteaux\n-- Attention vous ne devez pas touchez la potion
-    bleu parce que elle contient du poison qui dimuniras votre vie.\n-- Par contre
-    , vous devez prendre ou toucher la potion rose,car elle augmente votre vie."
+    bleu parce qu' elle contient du poison qui dimuniras votre vie.\n-- Par contre
+    , vous devez prendre ou toucher la potion rose,car elle augmente votre vie.\nBonne
+    Chance!!!"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c867a9e6b1e65e6479235989f8047a80, type: 2}
   m_sharedMaterial: {fileID: 887986302473062201, guid: c867a9e6b1e65e6479235989f8047a80,
@@ -1027,7 +1028,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 1
+  m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &572433515
@@ -1506,8 +1507,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 34, y: -304}
-  m_SizeDelta: {x: 215.4321, y: 49.4762}
+  m_AnchoredPosition: {x: -29.6403, y: -362.85}
+  m_SizeDelta: {x: 274.7127, y: 95.179}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1123196966
 MonoBehaviour:
